@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        height: 100vh;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        color: white;
+        top: -150%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.0);
+        transition: all 0.3s linear;
+
+    }
+
+    .active {
+        top: 50%;
+        /* left: 50%; */
+        transform: translate(-50%, -50%)scale(1.25);
+        opacity: 1;
+        transition: all 0.3s linear;
+    }
+
+    .triCon {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        cursor: pointer;
+        /* display: none; */
+    }
+
+    .triCon .spans {
+        width: 25px;
+        height: 3px;
+        margin: 3px;
+        background-color: black;
+    }
+
+    .containers {
+        background-color: grey;
+        width: 80px;
+        border-radius: 5px;
+        margin: 50px 0;
+        position: relative;
+    }
+
+    .containers ul {
+        height: 30rem;
+        margin: 20px 0;
+        /* display: block; */
+        display: none;
+        /* /* text-align: center;  */
+        /* overflow-y: scroll; */
+    }
+
+    .containers ul li {
+        list-style: none;
+        color: white;
+        padding: 15px;
+    }
+
+    .containers .close {
+        background-color: brown;
+        width: 40px;
+        padding: 3px;
+        margin: 10px;
+        right: 0;
+        top: 0;
+        position: absolute;
+        border-radius: 5px;
+        display: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <input type="search" name="" id="searchArea">
+    <button id="openBtn">login Here</button>
+    <div class="container">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem fugiat ratione culpa perferendis eum, unde
+        nobis
+        architecto rem corrupti amet!
+        <button id="closeBtn">Close</button>
+    </div>
+    <div class="containers">
+        <div class="triCon">
+            <div class="spans"></div>
+            <div class="spans"></div>
+            <div class="spans"></div>
+        </div>
+        <ul class="ulTag">
+            <li>Home</li>
+            <li>About</li>
+            <li>contact</li>
+            <li>service</li>
+            <li>Email</li>
+            <li>career</li>
+            <li>thumbail</li>
+            <li>phone</li>
+            <li>Mobile</li>
+        </ul>
+        <div class="close">close</div>
+    </div>
+    <div class="paragraph">
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, animi. aslam</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, vitae aspernatur.</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam praesentium sequi ipsam a tenetur
+                    aliquam accusamus tempore ullam commodi? Corporis odio quod esse quasi vero repudiandae rem soluta
+                    mollitia aspernatur!</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro totam nihil quidem!</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi labore hic error quo.</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing aslam elit. Fuga totam, reprehenderit soluta voluptate
+                    sharique
+                    natus dolorum!3</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corrupti nihil accusamus voluptatibus
+                    libero.</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis libero labore?</p>
+            </div>
+        </div>
+        <div class="para">
+            <div class="notes">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, est?</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    let openBtn = document.querySelector("#openBtn");
+    let container = document.querySelector(".container");
+    let closeBtn = document.querySelector("#closeBtn");
+
+    openBtn.addEventListener("click", function () {
+        container.classList.add("active")
+        console.log(openBtn)
+    })
+    closeBtn.addEventListener("click", function () {
+        container.classList.remove("active")
+    })
+
+    let triCon = document.querySelector(".triCon");
+    let close = document.querySelector(".close");
+    let ulTag = document.querySelector(".ulTag");
+    let containers = document.querySelector(".containers")
+    triCon.addEventListener("click", function () {
+        triCon.style.display = "none";
+        containers.style.width = 250 + "px";
+        containers.style.transition = "all 0.2s ease-in-out";
+        ulTag.style.display = "block"
+        close.style.display = "block"
+    })
+    close.addEventListener("click", function () {
+        ulTag.style.display = "none"
+        triCon.style.display = "block";
+        containers.style.transition = "all 0.2s linear";
+        containers.style.width = 80 + "px";
+        close.style.display = "none"
+    })
+
+    let search = document.querySelector("#searchArea");
+    search.addEventListener("input", function(){
+        let inputVal = search.value.toLowerCase();
+        let notes = document.querySelector(".notes");
+        let words = document.getElementsByTagName("p")[0].innerText;
+        if(words.includes(inputVal)){
+            notes.style.display = "block";
+            notes.style.color = "red" ;
+        }
+        else{
+            notes.style.display = "none";
+        };
+    });
+
+    // let search = document.querySelector("#searchArea");
+    // search.addEventListener("input", function () {
+    //     let inputVal = search.value.toLowerCase();
+    //     console.log(inputVal);
+    //     let sections = document.querySelector(".notes");
+    //     let bodyPart = document.getElementsByTagName("p")[0].innerText;
+    //     if (bodyPart.includes(inputVal)) {
+    //         sections.style.display = "block";
+    //         sections.style.color = "red" 
+    //     }
+    //     else {
+    //         sections.style.display = "none";
+    //     }
+    //     // console.log(bodyPart)
+    // });
+
+
+</script>
+
+</html>

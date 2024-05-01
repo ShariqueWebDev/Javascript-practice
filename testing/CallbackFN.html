@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Function</title>
+</head>
+
+<body>
+    <h1>Student List</h1>
+    <ul class="" id="students"></ul>
+</body>
+<script>
+    let students = [
+        { name: 'sharique', subject: 'javaSript' },
+        { name: 'safiya', subject: 'makeUp box' },
+        { name: 'rukhsana', subject: 'Kaam karte raho' }
+    ]
+
+    const enrollStudents = (student, Callback, LoadScripts) => {
+        setTimeout(() => {
+            students.push(student);
+            Callback()
+            LoadScripts(("https://www.google./"), helloWorld)
+        }, 1000);
+    }
+
+    const getStudents = () => {
+        setTimeout(() => {
+            let str = "";
+            students.forEach((element) => {
+                str += `<li> ${element.name}  adjective is ${element.subject}</li>`
+                document.getElementById("students").innerHTML = str;
+            })
+        }, 4000);
+    }
+
+    const LoadScript = (src, HelloCall) => {
+        setTimeout(() => {
+            let script = document.createElement("script")
+            script.src = src;
+            let compTask = document.body.appendChild(script)
+            script.onload = () => {
+                console.log(`your webScript ${src} has been uploaded`)
+                HelloCall(null, src)
+            }
+            script.onerror = () => {
+                HelloCall(new Error("SRC Not Found!"))
+            }
+        }, 2000)
+    }
+    const helloWorld = (error, src) =>{
+        if(error){
+            alert(error);
+            return;
+        }
+        alert(`SRC Found ${src} ThankYou!`)
+        
+    }
+
+    let newStudent = { name: 'zeeshan', subject: 'aiydhi Ladka' }
+    enrollStudents(newStudent, getStudents, LoadScript);
+    // enrollStudents(newStudent, getStudents, LoadScript("https://www.facebook.com/"));
+    // getStudents();
+    // LoadScript("https://www.google.com/")
+
+
+</script>
+
+</html>

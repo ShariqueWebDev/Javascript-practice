@@ -1,0 +1,8 @@
+Name: sharique aslam shaikh
+roll no: 14
+faculty: Software IT Department
+course: BCA
+Year: 2022
+course Year: 5th second last semester
+college: raise kokan muslim education society(KMES)
+University:Yashwant Rao Chavhan(YCMOU)

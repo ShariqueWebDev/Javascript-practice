@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const BankAccount = class {
+    customerName;
+    accountNumber = Date.now();
+    #Balance;
+
+    constructor(customerName, Balance = 0){
+        this.customerName = customerName;
+        this.accountNumber = Date.now();
+        this.#Balance = Balance;
+    }
+    
+    deposite(amount){
+            this.#Balance += amount;
+    }
+
+    withdraw(amount){
+        this.#Balance -= amount;
+    }
+
+    set setBalance(amount){
+        if(isNaN(amount)){
+            throw new Error("Input is not a valid Datatype")
+        }
+        this.#Balance = amount;
+    }
+
+    get getBalance(){
+        return this.#Balance
+    }
+}
+
+const shariqueAccount = new BankAccount("Sharique Aslam", 500);
+shariqueAccount.setBalance = 750
+// console.log(shariqueAccount);
+
+shariqueAccount.getBalance;
+
+shariqueAccount.deposite(2000);
+// // console.log(shariqueAccount);
+
+shariqueAccount.withdraw(1000);
+console.log(shariqueAccount);
+</script>
+</html>

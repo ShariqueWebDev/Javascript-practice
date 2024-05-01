@@ -1,0 +1,51 @@
+ <html>
+    <body style="height: 30000px; font-size: 25px; box-sizing: border-box; margin: 0; padding: 0;" onscroll="showCounterNumber()">
+        <div style="position: fixed; top: 0;">
+            <div id="n-count"></div>
+            <div id="t-count"></div>
+        </div>
+            
+    </body>
+ </html>
+
+
+ <script>
+    const n_count = document.getElementById("n-count") 
+    const t_count = document.getElementById("t-count") 
+
+    let normal_count = 0;
+    const normalCount = () =>{
+            normal_count++;
+            n_count.innerHTML = `normal is : ${normal_count}`;
+            console.log(normal_count);
+    }
+
+    // throlling method
+    let throttle_count = 0;
+    let isScrolling = true;
+
+    const throttleCount = () =>{
+
+        if(isScrolling === true){
+            
+            setTimeout(() => {
+                
+                throttle_count++;
+                t_count.innerHTML = `throttle count is : ${throttle_count}`
+                isScrolling = true
+                
+            }, 1000);
+            isScrolling = false;
+        }
+    }
+
+    const showCounterNumber = () =>{
+        normalCount();
+        throttleCount();
+    }
+
+    
+
+
+
+ </script>

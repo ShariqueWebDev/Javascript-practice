@@ -1,0 +1,62 @@
+<script>
+// setTimeout(() => {
+//       const letKeyword =  ()=>{
+//           let a = 20;
+//           const b = 400;
+//           console.log(a);
+//       }
+//       console.log
+//       letKeyword()
+//   }, 2000);
+
+// //   let a = 200;
+//   console.log(a);
+//   const b = 500
+//   console.log(b)
+
+//   const createId = Date.now();
+//   console.log(createId);
+
+//    const  sumNumbers =(a, b) => {
+//       const total = a+b
+//       return total
+//    }
+
+//    const result = sumNumbers(10,20)
+
+//    console.log(result)
+
+  const a = () =>{
+     return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+           resolve("status code 200 means OK")
+        }, 2000);
+     })
+  }
+
+  const f = async() =>{
+     let b = await a();
+     console.log(b);
+     let c = await a();
+     console.log(c);
+     let d = await a();
+     console.log(d);
+     let e = await a();
+     console.log(e);
+  }
+  f();
+
+  (function(){console.log("IIFE");}())
+
+   setTimeout(function a(){console.log("a");}, 2000);
+   setTimeout(function b(){console.log("b");}, 1000);
+   setTimeout(function c(){console.log("c");}, 500);
+  function d(){console.log("d");}
+  d()
+
+//   RANDOM NUMBER GENERATOR AND OTP IT WILL PRODUCE 5 DIGIT OF NUMBERS
+  const randomNumbers = Math.random();
+  console.log(randomNumbers);
+  const mathRound = Math.round(randomNumbers * 90000 + 10000);
+  console.log(mathRound);
+</script>

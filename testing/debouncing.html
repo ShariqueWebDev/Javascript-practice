@@ -1,0 +1,23 @@
+<input type="text" name="" id="search"  onchange="betterFunction()" />
+
+<script>
+
+// DEBOUNCING METHOD
+let count = 0;
+const getData = () =>{
+  console.log("Debounce function call triggered" + count++);
+}
+
+let timer;
+const myBouncing = (call, delay) =>{
+  return ()=>{
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      call();
+    }, delay);
+  }
+}
+
+const betterFunction = myBouncing(getData, 1500)
+
+</script>

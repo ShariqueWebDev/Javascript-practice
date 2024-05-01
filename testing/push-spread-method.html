@@ -1,0 +1,22 @@
+<script>
+    const arr = [1, 2, 3]
+    const append = [4, 5, 6]
+
+    const appendElement = (array, ...elem) =>{
+        return [...array, ...elem]
+    }
+    
+    console.log(appendElement(arr, ...append));
+    
+    const appendElement1 = (array, elem) =>{
+        return array.concat(...elem)
+    }
+
+    console.log(appendElement1(arr, append), arr, append);
+    
+
+
+
+
+
+</script>

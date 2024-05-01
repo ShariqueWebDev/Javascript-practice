@@ -1,0 +1,51 @@
+<script>
+
+    let country = "india";
+
+let mumbaiWeather = new Promise((resolve, reject)=>{
+    setTimeout(() => {
+        resolve("mumbai weather is 27");
+    }, 2000);
+})
+
+let bhiwandiWeather = new Promise((resolve, reject)=>{
+    setTimeout(() => {
+        resolve("bhiwandi weather is 22");
+    }, 4000);
+})
+
+const nasikWeather = (mumbaiDetail)=>{
+    return new Promise ((resolve, reject)=>{
+        setTimeout((mumbaiDetails) => {
+            resolve(`nasik weather is 27 deg and this is ${country} and ${mumbaiDetails} it is approximitly similar`)
+        }, 6000, mumbaiDetail);
+    })
+}
+
+// mumbaiWeather.then(data=>console.log(data));
+// bhiwandiWeather.then(data=>console.log(data));
+
+const weather = async () =>{
+    console.log("weather is checking");
+    let mumbai = await mumbaiWeather
+    console.log(mumbai);
+    let bhiwandi = await bhiwandiWeather
+    console.log(bhiwandi);
+    let nashik = await nasikWeather(mumbai)
+    console.log(nashik);
+    return nashik
+}
+
+const done = () =>{
+    console.log("weather checking has been done");
+}
+
+const synchFunction = async () => {
+     let returnVal = await weather().then((data)=>{
+        console.log(`this is second nasik data is :::>>> ${data}`);
+     })
+     await done()
+}
+synchFunction();
+
+</script>

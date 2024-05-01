@@ -1,0 +1,386 @@
+  <script>
+    // let Employee = {
+    //     Name: "Sharique",
+    //     Age: 28,
+    //     City: "Bhiwandi",
+    //     Education: "BCA",
+    //     House_No: 422,
+    //     IdNumber: 1,
+    //     DOB: "24_07_1994"
+    // }
+
+    // let {Name: N, Age: A, City: C,
+    //     Education: E, House_No: H,
+    //     IdNumber: I, DOB: D} = Employee;
+
+    // console.log(N);
+    // console.log(A);
+    // console.log(C);
+    // console.log(E);
+    // console.log(H);
+    // console.log(I);
+    // console.log(D);
+
+    // function webDev(){
+    //     return["shariqueAslam", 28, "shantiNagar"]
+    // }
+    // let [Name, Age, address] = webDev()
+    // console.log(Name);
+    // console.log(Age);
+    // console.log(address);
+
+    // function User(){
+    //     return ["zeeshan", 20, "Mumbra"];
+    // }
+    // let [name, age, city] = User();
+    // console.log(name);
+    // console.log(age);
+    // console.log(city);
+
+    // let EmpComp = ["sharique", "aslam", "safiya", "tarique"]
+    // let [student, father, sister, brother] = EmpComp;
+    // console.log(student);
+    // console.log(father);
+    // console.log(sister);
+    // console.log(brother);
+
+    // let sectionA = [
+    //     ["haider", 31, "salahuddin", ["male", 25000],["hotel", "javascript"]],
+    //     ["gufran", 34, "azadNagar"],
+    //     ["munzir", 28, "dargahRoad"]
+    // ];
+    // console.log(sectionA[0][4][1]);
+    // console.log(sectionA[0][3][0]);
+    // console.log(sectionA[1][2]);
+
+    // let Array = [
+    //     ["sharique", 28, "rukhsana Bano"],
+    //     ["tarique", 26, "rukhsana Bano", 5, 6],
+    //     ["safiya", 24, "rukhsana Bano"]
+    // ];
+
+    // for (let i = 0; i < 3; i++) {
+    //     for (let j = 0; j < 3; j++) {
+    //         console.log(Array[i][j]);
+    //     };
+    // };
+    // console.log(`Tarique Rank`+ " " + Array[1][4]);
+
+    // let l = ["sharique", "aslam", "rukhsana", "Tarique"];
+    // let m = ["fatima", "nikhat", "nuzhat", "rafique"];
+    // let c = [0, 2, 56, 58, 64, 265]
+    // let d = l.concat(m);
+    // console.log(d)
+    // let e = d.join("'")
+    // document.write(e)
+    // let f = d.slice(-4)
+    // document.write("<br>" + f)
+    // let g = d.splice(6);
+    // document.write("<br>" + g)
+    // A = Array.isArray(a);
+    // document.write("<br>" + A);
+    // B = "sharique";
+    // C = Array.isArray(B);
+    // document.write("<br>" + C);
+
+    // let i = [1, 1, 23, 25, 26, 92];
+    // if (Array.isArray(i) == true) {
+    //     document.write("<br>" + "This is an Array");
+    // }
+    // else {
+    //     document.write("<br>" + "This is not an Array");
+    // };
+    // let cal = 0;
+    // let total;
+    // for (let j = 0; j < 6; j++) {
+    //     document.write("<br>");
+    //     cal = cal + i[j];
+    //     document.write(cal);
+    // };
+
+    // let zeeshan = Array.isArray(a)
+    // document.write("<br>" + zeeshan);
+
+    // let b = Arr.includes("sharique")
+    // console.log(b);
+
+    // function incld(){
+    //     let Arr = ["sharique", "aslam", 18]
+    //     if((Arr.includes("sharique") == true) && (Array.isArray(Arr) == true)){
+    //         console.log("Sharique is big brother of Tarique");
+    //     }
+    //     else{
+    //         console.log("sharique is not defined");
+    //     };
+    // };
+    // incld();
+
+    // let arr = [20, 30, 40, 50, 60]
+    // let isArr = arr.some(checkNum);
+    // document.write(arr + "<br>");
+    // document.write(arr.length + "<br>");
+    // document.write(isArr + "<br>");
+
+    // function checkNum(num) {
+    //     return num == 610;
+    // }
+
+    // let abs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // let fbs = abs.every(checkTest);
+    // function checkTest(num) {
+    //     return num > 0;
+    // }
+    // document.write(fbs + "<br>");
+
+    // if (abs.includes(5) == true) {
+    //     document.write("it is 5 number");
+    // }
+
+    // let dbs = abs.find(findNum);
+    // function findNum(age) {
+    //     return age < 3
+    // }
+    // document.write("<br>" + dbs);
+
+    // // let check = filMtd.filter(filterNum);
+    // // function filterNum(marks){
+    // //     return marks > 5;
+    // // }
+    // // document.write("<br>" + check);
+
+    // let filMtd = [2, 5, 6, 45, 85, 25, 10, 54, 56, 3.3, 20];
+    // let Arr = ["sharique", "aslam", "rukhsana", "Darakhsha"];
+
+    // // let change = Arr.fill("denmark");
+    // // document.write(change + "<br>");
+    // document.write("<br>" + Arr);
+    // filMtd.forEach(function (value, index) {
+    //     document.write("<br>" + index + " : " + value);
+    // })
+    // Arr.forEach((value, index) => {
+    //     document.write("<br>" + "<br>" + index + " = " + value);
+    // })
+    // let fil = filMtd.find(checkAge)
+    // let filIndex = filMtd.findIndex(checkAge)
+    // function checkAge(a) {
+    //     return a > 18;
+    // }
+    // document.write("<br>" + "<br>" + fil);
+    // document.write(" The index is : " + filIndex);
+
+    // let a = ["aman", "sahil", "doctor", "farheen", "arbaz", "tarique", "aman"]
+    // // a.sort();
+    // // document.write(a);
+    // // a.reverse();
+    // // document.write("<br>" + a);
+    // // a.pop()
+    // // document.write("<br>" + a);
+    // // a.push("rohan", 100, "salman")
+    // // document.write("<br>" + a);
+    // // a.shift()
+    // // document.write("<br>" + a);
+    // // a.unshift("arfatt")
+    // // document.write("<br>" + a);
+    // let b = a.lastIndexOf("farheen")
+    // document.write("<br>" + b);
+
+    // a.forEach(loop);
+    // function loop(value, index) {
+    //     document.write("<br>" + index + ":" + value);
+    // };
+
+    // let numbers = [1, 3, 5, 8, 9, 5, 4, 66, 22, 54, 87, 26, 45];
+    // numbers.sort();
+    // document.write("<br>" + numbers);
+    // let boolean;
+    // (Array.isArray(numbers)) ? boolean = "true" : boolean = "false";
+    // document.write("<br>" + boolean);
+    // let Hep;
+    // Hep = (numbers.includes(100)) ? true : false
+    // document.write("<br>" + Hep + "<br>");
+    // let bds = a.some(checkNum)
+    // function checkNum(e) {
+    //     return e = 66;
+    // }
+    // if (bds == true) {
+    //     // alert("you are included The reuslt is : " + bds)
+    // } else {
+    //     // alert("it is not included The result is : " + bds);
+    // }
+
+    // function abc(alfa, beta, gamma) {
+    //     let total = (alfa + beta + gamma)
+    //     return total;
+    // }
+    // let tt = abc(3, 15, 2);
+    // document.write(tt + "<br>");
+
+    // function mult(mins) {
+    //     let multiply = mins * 2
+    //     return multiply;
+    // }
+    // let returns = mult(tt);
+    // document.write(returns + "<br>")
+
+    // function min(r) {
+    //     let mins = r - 5
+    //     return mins;
+    // }
+    // let capture = min(returns);
+    // document.write(capture + "<br>");
+
+    // function temp(w) {
+    //     let permanet = w / 7;
+    //     return permanet;
+    // }
+    // let gain = temp(capture);
+    // document.write(gain + "<br>");
+    // let h = 10
+    // // h <= 110 ? alert(h) : alert("wrong number");
+
+    // function sume(a, b, c, d) {
+    //     let add = a + b + c + d;
+    //     return add;
+    // }
+    // let addition = sume(10, 2, 3, 4);
+    // document.write(addition + "<br>");
+
+    // function theDiv(div) {
+    //     let Div = div / 2;
+    //     return Div;
+    // }
+    // let per = theDiv(addition);
+    // document.write(per)
+
+    // let i = 0
+    // while (i < 10) {
+    //     document.write("<br>" + "shrqiueuihfhi");
+    //     i++;
+    // }
+    // let arrrr = ["shar", "faj", "hna", "fjjfa", "nan"]
+    // for (let j = 0; j < 5; j++) {
+    //     document.write("<br>" + arrrr[j] + "<br>")
+    // }
+
+    // for (let k = 1; k <= 100; k = k + 10) {
+    //     for (let l = k; l < k + 10; l++) {
+    //         document.write(" " + l)
+    //     }
+    //     document.write(" " + "<br>");
+    // }
+    // let arr = [12, 25, 65, 32, 58, 98, 52, 65, 45, 58]
+    // for (let m = 0; m < 10; m++) {
+    //     document.write(arr[m] + "<br>");
+    // }
+    // arr[0] = 20;
+    // delete (arr[4]);
+    // document.write(arr)
+
+    // let tom = new Array();
+    // tom[0] = 25;
+    // tom[1] = 36;
+    // tom[2] = 65;
+    // tom[3] = 45;
+    // tom[4] = true;
+    // tom[5] = false;
+    // tom[6] = "kutto butto";
+    // tom[7] = "sharique";
+    // // document.write(tom);
+    // for (let a = 0; a <= 7; a++) {
+    //     document.write("<br>" + tom[a]);
+    // }
+
+    // let jerry = new Array();
+    // for (let i = 0; i < 3; i++) {
+    //     // jerry[i] = prompt("enter the value of arry");
+    // }
+    // for (let j = 0; j < 3; j++) {
+    //     document.write("<br>" + jerry[j]);
+    // }
+
+    let multiArray = [
+      ["sharique", 25, true],
+      ["safiya", 20, false],
+      ["anzalna", 15, true],
+    ];
+    // delete(multiArray[0]);
+    delete multiArray[2];
+    multiArray[0][0] = "English";
+    // for (let l = 0; l < multiArray.length; l++) {
+    //     for (m = 0; m < multiArray.length; m++) {
+    //         document.write(multiArray[l][m] + " ");
+    //     }
+    //     document.write("<br>");
+    // }
+
+    // multiArray[0][0] = 250;
+    document.write(multiArray);
+
+    let obj = {
+      fname: "Sharique",
+      lname: "Shaikh",
+      age: 28,
+      city: "Bhiwandi",
+      id: {
+        idNo: 1225,
+        DrLicence: "E8523fedhs2252F412f",
+        HNumber: 76,
+      },
+
+      Salary: function () {
+        return [12000, 18000, 20000];
+      },
+    };
+    // console.log(obj)
+    // document.write(obj.fname + "<br>")
+    // document.write(obj.Salary() + "<br>")
+    // document.write(obj.id.DrLicence)
+
+    let objt = new Object();
+    objt.cycleRotation = "90 Degree";
+    objt.Gravity = "10.000025N";
+    objt.BalanceMajor = "35mm/s.m3";
+    document.write("<br>" + objt.Gravity);
+    document.write("<br>" + objt.BalanceMajor);
+
+     const testingOne =()=>{
+       return new Promise((resolve, reject)=>{
+         setTimeout(() => {
+           console.log("The First Function")
+           resolve()
+         }, 2500);
+       })
+     }
+     const testingTwo = () =>{
+       return new Promise((resolve, reject)=>{
+         setTimeout(()=>{
+           console.log("The Second Function");
+           resolve()
+         }, 1500)
+       })
+     }
+     const testingThree = () =>{
+      return new Promise((resolve, reject)=>{
+        console.log("The Third Function");
+        resolve();
+      })
+     }
+     
+     const testingFour = () =>{
+      return new Promise((resolve, reject)=>{
+        console.log("The Fourth Function");
+        resolve();
+      })
+     }
+     
+
+     const runFunction = async ()=>{
+       await testingOne();
+       await testingFour();
+       await testingThree();
+       await testingTwo();
+     }
+     runFunction()
+    //  testingThree().then(testingOne).then(testingTwo)
+  </script>
+</html>

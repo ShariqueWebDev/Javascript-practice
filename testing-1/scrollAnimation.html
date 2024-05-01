@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    section{
+        height: 500px;
+        width: 100%;
+        /* background-color: rgb(139, 136, 136); */
+        color: black;
+        font-size: 25px;
+        display: grid;
+        place-items: center;
+    }
+    .hidden{
+        opacity: 0;
+        transform: translateX(-300px);
+        filter: blur(15px);
+        transition: all 1s;
+    }
+    .show{
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+</style>
+<body>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore incidunt eos, recusandae ab sunt aperiam!
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet.
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo labore dolore?
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, amet saepe non quas incidunt sit dolor praesentium, provident quisquam in vitae, omnis nemo! Non ex blanditiis reprehenderit quae recusandae neque officiis, facere veritatis aliquam odit dicta ipsum harum repellat ab, labore quod minus minima deserunt sit tenetur! Itaque, commodi rem!
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At fuga ipsa perspiciatis ipsam magni iste doloribus, delectus eos aperiam labore.
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium mollitia culpa tempora velit et. Aperiam?
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi, quis harum incidunt quos et in suscipit non dicta, omnis mollitia assumenda tenetur nihil consectetur.
+    </section>
+    <section class="hidden">
+        lorem10
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatum debitis consectetur error porro corporis nobis? Distinctio sapiente nobis ducimus mollitia itaque, praesentium dolore? Eaque, sequi! Possimus illum ipsam ipsum distinctio qui dolorem doloremque expedita? Architecto reprehenderit voluptate minus dolore! Adipisci id fugit corporis autem, quo, iusto explicabo qui eligendi obcaecati cumque amet quis error ab nostrum quos saepe temporibus cum nobis numquam optio consequuntur suscipit, blanditiis eveniet facilis! Reprehenderit impedit animi culpa officiis eum voluptas odio nemo consequuntur, iusto, quas sed voluptatibus cum neque ipsum ex sapiente ad veniam esse molestias alias dolorem eius dicta! Mollitia deserunt ipsa consequuntur.
+    </section>
+</body>
+<script>
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+            else{
+                entry.target.classList.remove("show")
+            }
+        })
+    })
+
+    const hiddenElement = document.querySelectorAll(".hidden");
+    hiddenElement.forEach((e)=>observer.observe(e));
+</script>
+</html>

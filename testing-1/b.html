@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Manipulation</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #navbar {
+        padding: 20px;
+    }
+
+    .def {
+        color: saddlebrown;
+        background-color: mediumaquamarine;
+    }
+
+    #container {
+        background-color: gray;
+        color: chartreuse;
+        height: 50px;
+        overflow: hidden;
+        width: 600px;
+    }
+
+    .loremPara {
+        padding: 15px;
+        background-color: aqua;
+        color: blue;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    #container .adop {
+        padding: 10px;
+    }
+
+    .LastPara {
+        color: blue;
+    }
+
+    #second {
+        /* height: 100px; */
+        background-color: blueviolet;
+        transition: all 2s linear;
+    }
+
+    .hide {
+        height: 300px;
+        width: 300px;
+        display: block;
+
+    }
+
+    .show {
+        display: none;
+    }
+    .trans{
+        transition: all 0.5s linear;
+    }
+</style>
+
+<body>
+    <nav id="navbar" class="navTop">
+        <h1 id="headingFirst">Practice Set</h1>
+        <ul id="ulTag" style="border: 1px solid red;" onclick="abc()">
+            <li id="liType">Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quas?</p>
+    </nav>
+    <div id="container">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, molestias.</p>
+        <div id="midDiv" class="adop">
+            <ol>grapes</ol>
+            <ol>apple</ol>
+            <ol>potato</ol>
+            <ol>carrot</ol>
+        </div>
+    </div>
+    <div id="containers">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, molestias.</p>
+        <div id="midDiv" class="adop">
+            <ol>grapes</ol>
+            <ol>apple</ol>
+            <ol>potato</ol>
+            <ol>carrot</ol>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod laudantium eum doloribus minima alias tempora
+        debitis quasi? Dolorem, eius quis? </p>
+    <button id="btns">alt me</button>
+    <div id="para" class="show">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque totam facere sunt, aut repudiandae iste!</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, iure?</p>
+    </div>
+    <div id="LastPara">
+
+    </div>
+    <button id="btnss">click me</button>
+    <button id="btn" onclick="hideShowUser()">click me sharique</button>
+    <div id="second">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est rerum modi quod iusto nisi odit laudantium!
+            Libero cumque itaque obcaecati laborum, explicabo at, nemo atque aliquam voluptatum sunt eligendi iste!</p>
+    </div>
+</body>
+<script>
+    let sElement = document.getElementById("headingFirst").nextElementSibling.innerHTML = "<ul><li>Services</li><li>Filter</li><li>Document</li></ul>"
+    let element;
+    element = document.getElementById("ulTag");
+    // document.write(element);
+    console.log(element);
+    document.getElementById("headingFirst").setAttribute("class", "xyz");
+    document.getElementById("headingFirst").getAttribute("class")
+    let tElement = document.getElementById("paragraph").innerText = "My Name is Sharique Aslam";
+    document.querySelector(".navTop").setAttribute("class", "def")
+    let last = document.getElementById("container").classList = "loremPara setPara";
+    console.log(last)
+    document.getElementById("midDiv").setAttribute("id", "dummy")
+    // let attribe = document.getElementById("midDiv").getAttribute("id");
+    // console.log(attribe);
+    document.getElementById("dummy").style.color = "red"
+    let para = document.getElementById("para")
+    document.getElementById("btns").addEventListener("click", sharique);
+    function sharique() {
+        para.classList.toggle("show");
+    }
+    let dics = document.getElementById("btn").addEventListener("click", turbo)
+    function turbo() {
+        document.getElementById("LastPara").innerHTML = "<div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque totam facere sunt, aut repudiandae iste!</p><p>Lorem ipsum dolor sit amet.</p><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, iure?</p></div>";
+        document.getElementById("LastPara").style.height = 300 + "px";
+        document.getElementById("LastPara").style.width = 300 + "px";
+        document.getElementById("LastPara").style.backgroundColor = "tan";
+        document.getElementById("LastPara").style.padding = 20 + "px";
+    };
+    let HideShow = document.getElementById("container").addEventListener("mouseenter",
+        function () {
+            //     let isShow = true;
+            //     if (isShow) {
+            //         HideShow.style.display = "block";
+            //         isShow = false;
+            //     }
+            //     else{
+            //         HideShow.style.display = "none";
+            //         isShow = true;
+            //         console.log("remove me")
+            //     }
+            this.style.height = 160 + "px";
+            this.style.transition = "all 0.3s linear"
+        });
+    document.getElementById("container").addEventListener("mouseleave", function () {
+        this.style.height = 50 + "px";
+    })
+    function hideShowUser() {
+        HideShow.classList.toggle("hide")
+    }
+
+    let newElement = document.createElement("h2");
+    let newText = document.createTextNode("Hi this is text only");
+    newElement.appendChild(newText);
+
+    let target = document.getElementById("navbar");
+    let beforeMe = target.insertBefore(newElement, target.childNodes[0]);
+    // console.log(beforeMe)
+
+    // console.log(elements);
+    let cretNode = document.createElement("li")
+    let text = document.createTextNode("Guava");
+    cretNode.appendChild(text)
+    let eleminate = document.getElementById("ulTag").firstChild;
+    // console.log(eleminate);
+    let elemination = eleminate.children[0];
+    eleminate.replaceChild(cretNode, elemination)
+
+    let childrenTest = document.getElementById("container").lastElementChild
+    console.log(childrenTest)
+
+    let lastParagraph = document.getElementById("btn").firstSibling
+    console.log(lastParagraph)
+
+    let record = document.getElementById("second");
+    console.log(record)
+    // let Drecord = record.firstElementChild;
+    record.replaceChild(cretNode, record.firstElementChild);
+
+    let HasAtt = document.getElementById("LastPara")
+    let find = HasAtt.hasAttribute("class");
+    console.log(find)
+
+    let equal = document.getElementById("container").firstChild;
+    let equals = document.getElementById("containers").firstChild;
+    let finds = equal.isEqualNode(equals)
+    console.log(finds);
+</script>
+
+</html>

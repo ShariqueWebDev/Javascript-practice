@@ -1,0 +1,77 @@
+<script>
+  // let hits = 100;
+
+  // const obj = {
+  //     name:"Sharique",
+  //     rollNo:"20"
+  // }
+
+  // function callByValue (a, b){
+  //     a = 200;
+  //     b.name = "Aslam";
+  //     b.rollNo = 150
+  //     console.log(b)
+  //     console.log(a)
+  // }
+
+  // callByValue(hits, obj)
+
+  // console.log(obj);
+  // console.log(hits);
+
+  // const insta = function instagram(){
+  //     console.log("This is Instagram Id")
+  // }
+
+  // insta();
+
+  // const obj = {
+  //     name:"sharique",
+  //     quali: function(){
+  //         console.log("this child function")
+  //     }
+  // }
+
+  // obj.quali();
+
+  //    function funTofun (recieveFun, name){
+  //     console.log(recieveFun() + " " + name)
+  //    }
+
+  //    function innerFun(){
+  //         return a = "Mohammad";
+  //    }
+
+  //    funTofun(innerFun, "and i am Sharique")
+
+  // function returnFunction () {
+  //     function innerFunction () {
+  //         console.log("This is Return Function Here")
+  //     }
+  //     return innerFunction()
+
+  // }
+
+  // returnFunction();
+
+  function funcA(funcB) {
+    console.log("hi function A");
+      function funcC(funcD) {
+      console.log("hi fucntion C");
+      const pass = funcD(15, 10);
+      console.log(pass);
+    }
+    funcB(funcC);
+  }
+
+  function funcB(funcC) {
+    console.log("hi function B");
+    function funcD(a, b) {
+      let add = a + b;
+      return add;
+    }
+    funcC(funcD);
+  }
+
+  funcA(funcB);
+</script>

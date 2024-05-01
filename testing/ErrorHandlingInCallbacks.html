@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling in Callbacks</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const LoadScript = (src, Callback) => {
+        setTimeout(() => {
+            let script = document.createElement("script")
+            script.src = src;
+            let compTask = document.body.appendChild(script)
+            script.onload = () => {
+                console.log(`your webScript ${src} has been uploaded`)
+                Callback(null, src);
+            }
+            script.onerror = () => {
+                console.log("Error loading script with SRC " + src)
+                Callback(new Error("Src got some error"))
+            }
+        }, 2000)
+    }
+
+    const HelloFunc = (error, src) => {
+        if (error) {
+            console.log(error)
+            return;
+        }
+        alert("Hello world " + src)
+    }
+
+    LoadScript("https://www.google.com/", HelloFunc);
+
+
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<script>
+
+    // HIGHER ORDER FUNCTION CODES
+    const interviewerQuetion = (name) => {
+        if(name === "Vinod"){
+            return (topic)=>{
+                console.log(`Hi ${name} what is ${topic} please answer in 60 seconds`)
+            }
+        }
+        else if(name === "Sharique"){
+            return (topic)=>{
+                console.log(`Hi ${name} what is ${topic} please answer in 60 seconds`)
+            }
+        }
+        else if (name === "Zeeshan"){
+            return (topic)=>{
+                console.log(`Hi ${name} what is ${topic} please answer in 60 seconds`)
+            }
+        }
+        else{
+            console.log("User Not Exist")
+        }
+    }
+
+    interviewerQuetion("Sharique")("React JS")
+    interviewerQuetion("Vinod")("JavaScript")
+    interviewerQuetion("Zeeshan")("Data Structure & Algorithm")
+    interviewerQuetion()
+    
+    // CLOSURE FUNCTION CODES
+    const callbackFunctionInterview = (name) =>{
+        return (topic)=>{
+            if(name === "sharique"){
+                console.log(`Hello ${name} tell me about ${topic} `)
+            }
+            else if(name === "tarique"){
+                console.log(`Hello ${name} tell me about ${topic} `)
+            }
+            else if(name === "zeeshan"){
+                console.log(`Hello ${name} tell me about ${topic} `)
+            }
+            else if(name === "anzalna"){
+                console.log(`Hello ${name} tell me about ${topic} `)
+            }
+            else{
+                console.log("User Not Defined!")
+            }
+        }
+    } 
+
+    callbackFunctionInterview("zeeshan")("Angular")
+    callbackFunctionInterview("sharique")("React")
+    callbackFunctionInterview("anzalna")("Vue Js")
+    callbackFunctionInterview("tarique")("Mongo DB")
+    callbackFunctionInterview("irfan")("Mongo DB")
+
+</script>

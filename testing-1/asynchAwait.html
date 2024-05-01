@@ -1,0 +1,56 @@
+<html>
+    <body>
+
+        <button id="btn">click me</button>
+    </body>
+</html>
+<script>
+  const testingOne = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("The First Function");
+        resolve();
+      }, 2500);
+    });
+  };
+  const testingTwo = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("The Second Function");
+        resolve();
+      }, 1500);
+    });
+  };
+  const testingThree = () => {
+    return new Promise((resolve, reject) => {
+      console.log("The Third Function");
+      resolve();
+    });
+  };
+
+  const testingFour = () => {
+    return new Promise((resolve, reject) => {
+      console.log("The Fourth Function");
+      resolve();
+    });
+  };
+
+  const runFunction = async () => {
+    await testingOne();
+    await testingFour();
+    await testingThree();
+    await testingTwo();
+  };
+  runFunction();
+  //  testingThree().the
+
+  // ASYNCH AWAIT EXAMPLE 2
+  let a = () => {
+    let start = new Date().getTime();
+    console.log("btn clicked");
+    while(new Date().getTime() - start < 5000);
+      console.log("clicked function b after 5 second");
+  }
+   let b = document.getElementById("btn")
+    b.addEventListener("click", a);
+</script>

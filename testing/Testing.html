@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #api{
+        width: 160px;
+        background-color: red;
+    }
+    #asynch {
+        background-color: aquamarine;
+        width: 100%;
+        height: 200px;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <div id="api"></div>
+    <div id="asynch"></div>
+</body>
+<script>
+    let inputArray = [50, 60, 70, 80, 10, 20, 40, 30]
+    if (inputArray.length < 2) {
+        console.log("Minmum 2 elements must be present")
+        console.log("There is no second largest")
+        console.log("Bye! Bye!")
+    }
+    let check = inputArray.sort();
+    console.log(check + "<br>" + "<br>")
+
+    let length = inputArray.length
+    for (let i = length - 2; i >= 0; i--) {
+        console.log(i)
+        if (inputArray[i] != inputArray[length - 1]) {
+            console.log(" Second largest: ", inputArray[i] + "<br>")
+        }
+    }
+    console.log("<br>" + "All elements are same" + "<br>")
+    console.log("So there is no second largest" + "<br>")
+    console.log("Bye! Bye!")
+
+    // Second Logical Method
+    let SingleTon = (() => {
+        let fruit;
+        const createFruit = () => {
+            let apple = new Apple("I am th fruit");
+            return apple;
+            console.log(apple)
+        }
+        return {
+            getFruit: () => {
+                if (!fruit) {
+                    fruit = createFruit()
+                }
+                return fruit;
+            }
+        }
+        console.log(getFruit);
+    });
+    SingleTon()
+
+    // Fetch Api Asynchronse and Await Functions Here
+    let divApi = document.getElementById("api")
+    let Asynch = document.getElementById("asynch")
+    const GetApiFun = () => {
+        URL = "./sharique.txt";
+        fetch(URL).then((response) => {
+            return response.text();
+        }).then((data) => {
+            Asynch.innerHTML = data;
+        })
+    }
+    GetApiFun();
+
+    // Asynchronse
+    async function AsynFunc() {
+        let response = await fetch("./api.txt")
+        let userData = await response.text()
+        return userData;
+    }
+    let func = AsynFunc()
+    func.then((data) => {
+        divApi.innerHTML = data
+    })
+
+    // let students = [
+    //     { name: "Sharique", qualification: "BCA" },
+    //     { name: "Safiya", qualification: "LLB" },
+    //     { name: "Tarique", qualification: "12th Passed" }
+    // ];
+
+    // const enrollStudents = (student, callLater) => {
+    //     setTimeout(() => {
+    //         students.push(student);
+    //         let storeData = localStorage.setItem("key", JSON.stringify(students))
+    //         callLater()
+    //     }, 2000)
+    // }
+
+    // const getStudents = () => {
+    //     setTimeout(() => {
+    //         let str = "";
+    //         students.forEach((element) => {
+    //             str += `<li> ${element.name} </li>`
+    //         })
+    //         document.getElementById("students").innerHTML = str;
+    //     }, 1000);
+    // }
+
+    // let newStudent = { name: "zeeshan", qualification: "10th Passed" }
+    // enrollStudents(newStudent, getStudents);
+    // getStudents();
+
+</script>
+
+</html>

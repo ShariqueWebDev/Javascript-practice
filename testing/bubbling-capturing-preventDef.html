@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <div class="parentDiv" style="width: 100px; background-color: green; border: 1px solid black; height: 150px;">
+      <div  style="width: 100px; background-color: red; border: 1px solid black; height: 100px;">
+        <button>click me</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  // EVENT BUBBLING IT EVENTS WILL GO CHILD TO PARENT
+  document.querySelector("div").addEventListener("click", () => {
+    console.log("div");
+  });
+  document.querySelector("button").addEventListener("click", (event) => {
+    // event.stopImmediatePropagation();
+    // event.stopImmediatePropagation();
+    // event.stopPropagation()
+    console.log("button");
+  });
+
+  document.querySelector(".parentDiv").addEventListener("click", (event)=>{
+    // event.stopPropagation()
+    console.log("parent event");
+
+  })
+
+  // THE EVENT CAPTURING PASS BY CHILD TO PARENT
+  // document.querySelector("div").addEventListener("click", ()=>{
+  //     console.log("div")
+  // }, true)
+  // document.querySelector("button").addEventListener("click", (event)=>{
+  //     console.log("button")
+  // }, true)
+
+  // // STOP BUBBLING PROPOGATION METHOD
+  // document.querySelector("div").addEventListener("click", ()=>{
+  //     console.log("div")
+  // })
+  // document.querySelector("button").addEventListener("click", (event) => {
+  //   console.log("button1");
+  // });
+</script>

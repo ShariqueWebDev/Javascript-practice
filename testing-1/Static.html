@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+        static id = 1;
+      constructor(name, age, income) {
+        this.name = name;
+        this.age = age;
+        this.income = income;
+        this.id = User.id++;
+      };
+
+      static compareNumber(user1, user2){
+        return user1.age - user2.age;
+      };
+
+      static compareWithIncome(user1, user2){
+        return user1.income - user2.income;
+      };
+    }
+
+    const user1 = new User("Sharique", 29, 8000);
+    const user2 = new User("Tarique", 27, 10000);
+    const user3 = new User("Anzalna", 25, 11000);
+
+    let users = [user1, user2, user3];
+    users.sort(User.compareWithIncome);
+    console.log(users);
+
+    console.log(a);
+    let a;
+
+  </script>
+</html>
