@@ -76,3 +76,13 @@
   let useFlat = multiArray.flat(1)
   console.log(useFlat);
 
+  let ArrayOf = Array.of(1,2,3, true)
+  console.log(ArrayOf);
+
+  let setArray = new Set(["a",1,true, false])
+  console.log(setArray);
+  let ArrayFrom = Array.from(setArray)
+  console.log(ArrayFrom);
+
+
+
