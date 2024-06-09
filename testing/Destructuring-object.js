@@ -1,5 +1,4 @@
 
-<script>
     'use strict'
     // ARRAY DESTRUCTURING
     let arr = ["car", "bike", "motor Cycle", "aeroplane", "ship"];
@@ -29,4 +28,3 @@
     console.log({...obj, ...obj1, city:"bhiwandi", nativePlace:"Bihar"});
 
 
-</script>

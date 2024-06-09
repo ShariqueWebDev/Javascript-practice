@@ -1,4 +1,4 @@
-<script>
+
 
     const youtubers = {
         name:"Sharique Shaikh",
@@ -20,7 +20,7 @@
         channel: "Thapa Technical"
     }
     // CALL METHOD OF JAVASCRIPT HERE
-    youtubers.feature.call(youtubers2, (6 + " " + "star"), "join")
+    youtubers.feature.call(youtubers2, (`6 star`), "join")
 
     // APPLY METHOD OF JAVASCRIPT HERE
     youtubers.feature.apply(youtubers3, [(10 + " " + "star"), "join"])
@@ -28,5 +28,3 @@
     // BIND METHOD OF JAVASCRIPT HERE
     const youtubers4 = youtubers.feature.bind(youtubers3, 20, "subscribe")
     youtubers4()
-
-</script>
